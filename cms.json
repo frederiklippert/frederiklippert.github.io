@@ -100,7 +100,7 @@
         "wip": true
       },
       {
-        "visible": false,
+        "visible": true,
         "featured": false,
         "title": "EmojiCodeAI",
         "year": "2025",
