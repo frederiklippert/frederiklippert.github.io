@@ -2,15 +2,15 @@
   "_comment": "Portfolio CMS — visible:false blendet Elemente aus. Einfach true setzen wenn bereit.",
 
   "meta": {
-    "title": "Dein Name — Developer",
+    "title": "Frederik Lippert — Developer",
     "description": "Developer & Builder — crafting things for the web.",
     "favicon": "⚡"
   },
 
   "hero": {
     "visible": true,
-    "name_first": "Dein",
-    "name_last": "Name",
+    "name_first": "Frederik",
+    "name_last": "Lippert",
     "status": {
       "visible": true,
       "text": "Studying · Building side projects · Open to internships"
