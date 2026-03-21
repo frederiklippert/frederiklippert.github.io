@@ -29,7 +29,7 @@
 
   "about": {
     "visible": true,
-    "image": "",
+    "image": "/assets/profile_pic.JPG",
     "image_alt": "Portrait",
     "headline": "A little about me",
     "bio": [
