@@ -1,0 +1,152 @@
+{
+  "_comment": "Portfolio CMS — visible:false blendet Elemente aus. Einfach true setzen wenn bereit.",
+
+  "meta": {
+    "title": "Dein Name — Developer",
+    "description": "Developer & Builder — crafting things for the web.",
+    "favicon": "⚡"
+  },
+
+  "hero": {
+    "visible": true,
+    "name_first": "Dein",
+    "name_last": "Name",
+    "status": {
+      "visible": true,
+      "text": "Studying · Building side projects · Open to internships"
+    },
+    "roles": ["Developer", "Builder", "Creator"],
+    "description": "I build things for the web. Currently learning, shipping side projects, and looking for my first real opportunity.",
+    "location": "Berlin, Germany",
+    "cta_primary": { "label": "See my work", "href": "#projects" },
+    "cta_secondary": { "label": "Get in touch", "href": "#contact" },
+    "socials": [
+      { "label": "GitHub",   "url": "https://github.com/",       "visible": true },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/",  "visible": true },
+      { "label": "Twitter",  "url": "https://twitter.com/",      "visible": false }
+    ]
+  },
+
+  "about": {
+    "visible": true,
+    "image": "",
+    "image_alt": "Portrait",
+    "headline": "A little about me",
+    "bio": [
+      "I'm a developer based in Berlin, currently studying and working on side projects to sharpen my skills. I care about writing clean code and building things that actually work.",
+      "I'm actively looking for my first professional opportunity — internship or working student position. Let's build something together."
+    ],
+    "stats": {
+      "visible": false,
+      "_note": "Einschalten wenn du stolze Zahlen hast",
+      "items": [
+        { "value": "1", "suffix": "+", "label": "Years learning",    "visible": true },
+        { "value": "5", "suffix": "+", "label": "Projects shipped",  "visible": true },
+        { "value": "0", "suffix": "",  "label": "Professional roles","visible": false }
+      ]
+    },
+    "resume": {
+      "visible": false,
+      "label": "Download CV",
+      "url": "#"
+    }
+  },
+
+  "experience": {
+    "visible": false,
+    "_note": "Setze visible:true sobald du deinen ersten Job/Praktikum hast",
+    "headline": "Where I've worked",
+    "items": [
+      {
+        "visible": false,
+        "role": "Working Student Frontend",
+        "company": "Company Name",
+        "company_url": "",
+        "location": "Berlin",
+        "period": "2025 — Now",
+        "current": true,
+        "description": "Beschreibung folgt.",
+        "tags": ["React", "TypeScript"]
+      }
+    ]
+  },
+
+  "projects": {
+    "visible": true,
+    "headline": "Selected work",
+    "items": [
+      {
+        "visible": true,
+        "featured": true,
+        "title": "Projekt Eins",
+        "year": "2024",
+        "description": "Kurze Beschreibung was das Projekt macht und was du dabei gelernt hast.",
+        "image": "",
+        "tags": ["HTML", "CSS", "JavaScript"],
+        "github": "https://github.com/",
+        "live": "",
+        "wip": false
+      },
+      {
+        "visible": true,
+        "featured": false,
+        "title": "Projekt Zwei",
+        "year": "2024",
+        "description": "Kurze Beschreibung.",
+        "image": "",
+        "tags": ["React"],
+        "github": "https://github.com/",
+        "live": "",
+        "wip": true
+      },
+      {
+        "visible": false,
+        "featured": false,
+        "title": "Projekt Drei",
+        "year": "2025",
+        "description": "Noch nicht fertig.",
+        "image": "",
+        "tags": [],
+        "github": "",
+        "live": "",
+        "wip": true
+      }
+    ]
+  },
+
+  "skills": {
+    "visible": true,
+    "headline": "What I work with",
+    "ticker": {
+      "visible": true,
+      "items": ["HTML", "CSS", "JavaScript", "React", "Git", "Node.js", "Figma", "TypeScript"]
+    },
+    "categories": [
+      { "visible": true,  "icon": "🎨", "name": "Frontend", "skills": ["HTML", "CSS", "JavaScript", "React"] },
+      { "visible": true,  "icon": "⚙️", "name": "Tools",    "skills": ["Git", "GitHub", "VS Code", "Figma"] },
+      { "visible": false, "icon": "🗄️", "name": "Backend",  "skills": ["Node.js", "Express", "PostgreSQL"] },
+      { "visible": false, "icon": "🚀", "name": "DevOps",   "skills": ["Docker", "Vercel", "GitHub Actions"] }
+    ]
+  },
+
+  "contact": {
+    "visible": true,
+    "headline": "Got a project in mind?",
+    "subheadline": "I'm always open to new ideas, collaborations, or just a good conversation about tech.",
+    "email": "deine@email.de",
+    "availability_note": "Usually responds within 24 hours",
+    "socials": [
+      { "label": "GitHub",   "url": "https://github.com/",      "icon": "github",   "visible": true },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/", "icon": "linkedin", "visible": true },
+      { "label": "Twitter",  "url": "https://twitter.com/",     "icon": "twitter",  "visible": false },
+      { "label": "Email",    "url": "mailto:deine@email.de",    "icon": "mail",     "visible": true }
+    ]
+  },
+
+  "footer": {
+    "visible": true,
+    "text": "Designed & Built by",
+    "name": "Dein Name",
+    "year": "2025"
+  }
+}
