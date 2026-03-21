@@ -661,8 +661,8 @@
   </div></section>
 
   <!-- ═══ SKILLS ═══ -->
-  <div class="s-div"><span class="s-num" id="skills-num">03</span><span class="s-lbl">Skills</span></div>
-  <section id="skills"><div class="s-inner">
+  <div class="s-div hidden" id="skills-div"><span class="s-num" id="skills-num">03</span><span class="s-lbl">Skills</span></div>
+  <section id="skills" class="hidden"><div class="s-inner">
     <h2 class="s-title reveal" id="skills-title"></h2>
     <div class="ticker-wrap hidden" id="ticker-wrap">
       <div class="ticker-track" id="ticker-track"></div>
@@ -790,11 +790,11 @@
     }
 
     /* ── SECTION NUMBERS ── */
-    function updateNums(hasExp) {
+    function updateNums(hasExp, hasSkills) {
       let n = 1;
-      if (hasExp) document.getElementById('exp-num').textContent = '0' + (++n);
-      document.getElementById('proj-num').textContent    = '0' + (++n);
-      document.getElementById('skills-num').textContent  = '0' + (++n);
+      if (hasExp)    document.getElementById('exp-num').textContent    = '0' + (++n);
+      document.getElementById('proj-num').textContent = '0' + (++n);
+      if (hasSkills) document.getElementById('skills-num').textContent = '0' + (++n);
       document.getElementById('contact-num').textContent = '0' + (++n);
     }
 
@@ -942,6 +942,9 @@
 
     function renderSkills(d) {
       const s = d.skills;
+      if (!s?.visible) return;
+      document.getElementById('skills-div').classList.remove('hidden');
+      document.getElementById('skills').classList.remove('hidden');
       document.getElementById('skills-title').textContent = s.headline;
 
       if (s.ticker?.visible && s.ticker.items.length) {
@@ -1002,7 +1005,7 @@
         renderSkills(data);
         renderContact(data);
         renderFooter(data);
-        updateNums(data.experience?.visible);
+        updateNums(data.experience?.visible, data.skills?.visible);
         setTimeout(initReveal, 200);
       } catch (err) {
         console.error('CMS load error:', err);
