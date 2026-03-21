@@ -77,7 +77,7 @@
     "items": [
       {
         "visible": true,
-        "featured": true,
+        "featured": false,
         "title": "PoS System for my School Kiosk",
         "year": "2025/26",
         "description": "A custom-built POS system for a school kiosk – developed using Flutter for an Android tablet, a web dashboard, and an additional kitchen display. Firestore ensures real-time synchronization across all devices, even offline. Features such as modifiers/toppings, order numbers, inventory management, and PayPal QR codes are all included. Developed entirely in-house, from concept to finished APK.",
@@ -115,7 +115,7 @@
   },
 
   "skills": {
-    "visible": true,
+    "visible": false,
     "headline": "What I work with",
     "ticker": {
       "visible": true,
@@ -133,13 +133,13 @@
     "visible": true,
     "headline": "Got a project in mind?",
     "subheadline": "I'm always open to new ideas, collaborations, or just a good conversation about tech.",
-    "email": "deine@email.de",
+    "email": "frederiklippert@gmx.de",
     "availability_note": "Usually responds within 24 hours",
     "socials": [
-      { "label": "GitHub",   "url": "https://github.com/",      "icon": "github",   "visible": true },
-      { "label": "LinkedIn", "url": "https://linkedin.com/in/", "icon": "linkedin", "visible": true },
+      { "label": "GitHub",   "url": "https://github.com/frederiklippert",      "icon": "github",   "visible": true },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/", "icon": "linkedin", "visible": false},
       { "label": "Twitter",  "url": "https://twitter.com/",     "icon": "twitter",  "visible": false },
-      { "label": "Email",    "url": "mailto:deine@email.de",    "icon": "mail",     "visible": true }
+      { "label": "Email",    "url": "mailto:frederiklippert@gmx.de",    "icon": "mail",     "visible": true }
     ]
   },
 
