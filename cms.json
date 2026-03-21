@@ -21,8 +21,8 @@
     "cta_primary": { "label": "See my work", "href": "#projects" },
     "cta_secondary": { "label": "Get in touch", "href": "#contact" },
     "socials": [
-      { "label": "GitHub",   "url": "https://github.com/",       "visible": true },
-      { "label": "LinkedIn", "url": "https://linkedin.com/in/",  "visible": true },
+      { "label": "GitHub",   "url": "https://github.com/frederiklippert",       "visible": true },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/",  "visible": false },
       { "label": "Twitter",  "url": "https://twitter.com/",      "visible": false }
     ]
   },
@@ -33,16 +33,16 @@
     "image_alt": "Portrait",
     "headline": "A little about me",
     "bio": [
-      "I'm a developer based in Berlin, currently studying and working on side projects to sharpen my skills. I care about writing clean code and building things that actually work.",
+      "I'm a developer based in Germany, currently studying and working on side projects to sharpen my skills. I care about writing clean code and building things that actually work.",
       "I'm actively looking for my first professional opportunity — internship or working student position. Let's build something together."
     ],
     "stats": {
-      "visible": false,
+      "visible": true,
       "_note": "Einschalten wenn du stolze Zahlen hast",
       "items": [
-        { "value": "1", "suffix": "+", "label": "Years learning",    "visible": true },
-        { "value": "5", "suffix": "+", "label": "Projects shipped",  "visible": true },
-        { "value": "0", "suffix": "",  "label": "Professional roles","visible": false }
+        { "value": "9", "suffix": "+", "label": "Years learning",    "visible": true },
+        { "value": "3", "suffix": "+", "label": "Projects shipped",  "visible": true },
+        { "value": "1", "suffix": "",  "label": "Big Project released","visible": true }
       ]
     },
     "resume": {
@@ -78,35 +78,35 @@
       {
         "visible": true,
         "featured": true,
-        "title": "Projekt Eins",
-        "year": "2024",
-        "description": "Kurze Beschreibung was das Projekt macht und was du dabei gelernt hast.",
-        "image": "",
-        "tags": ["HTML", "CSS", "JavaScript"],
-        "github": "https://github.com/",
+        "title": "PoS System for my School Kiosk",
+        "year": "2025/26",
+        "description": "A custom-built POS system for a school kiosk – developed using Flutter for an Android tablet, a web dashboard, and an additional kitchen display. Firestore ensures real-time synchronization across all devices, even offline. Features such as modifiers/toppings, order numbers, inventory management, and PayPal QR codes are all included. Developed entirely in-house, from concept to finished APK.",
+        "image": "Project_1.png",
+        "tags": ["Flutter", "Dart", "Firestore", "Android"],
+        "github": "",
         "live": "",
-        "wip": false
+        "wip": true
       },
       {
         "visible": true,
         "featured": false,
-        "title": "Projekt Zwei",
+        "title": "Website for the dental practice “Zahnärzte Dammann”",
         "year": "2024",
-        "description": "Kurze Beschreibung.",
-        "image": "",
-        "tags": ["React"],
-        "github": "https://github.com/",
-        "live": "",
+        "description": "Freelance project: Conceptualization and development of the official website for a dental practice. I developed the design, structure, and content entirely on my own, coordinated directly with the client, and built the site using Wix.",
+        "image": "Project_3.png",
+        "tags": ["Freelance", "Wix", "Webdesign", "Client Work"],
+        "github": "",
+        "live": "https://www.drdammann.de",
         "wip": true
       },
       {
         "visible": false,
         "featured": false,
-        "title": "Projekt Drei",
+        "title": "EmojiCodeAI",
         "year": "2025",
-        "description": "Noch nicht fertig.",
+        "description": "An experimental AI tool that translates text into a sequence of emojis—not as a direct 1:1 translation, but as an interpretive one. The algorithm analyzes mood, context, and key concepts, and uses them to generate an emoji sequence that, in the best-case scenario, summarizes the text better than words ever could. Small project, big question: What is lost when language consists solely of symbols?",
         "image": "",
-        "tags": [],
+        "tags": ["AI", "NLP", "Python", "Emoji", "Experiment"],
         "github": "",
         "live": "",
         "wip": true
@@ -119,7 +119,7 @@
     "headline": "What I work with",
     "ticker": {
       "visible": true,
-      "items": ["HTML", "CSS", "JavaScript", "React", "Git", "Node.js", "Figma", "TypeScript"]
+      "items": ["HTML", "CSS", "JavaScript", "Git", "Node.js", "Figma", "TypeScript"]
     },
     "categories": [
       { "visible": true,  "icon": "🎨", "name": "Frontend", "skills": ["HTML", "CSS", "JavaScript", "React"] },
@@ -146,7 +146,7 @@
   "footer": {
     "visible": true,
     "text": "Designed & Built by",
-    "name": "Dein Name",
-    "year": "2025"
+    "name": "Frederik Lippert",
+    "year": "2026"
   }
 }
