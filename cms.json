@@ -118,7 +118,7 @@
     "visible": false,
     "headline": "What I work with",
     "ticker": {
-      "visible": true,
+      "visible": false,
       "items": ["HTML", "CSS", "JavaScript", "Git", "Node.js", "Figma", "TypeScript"]
     },
     "categories": [
