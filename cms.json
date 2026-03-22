@@ -40,8 +40,7 @@
       "visible": true,
       "_note": "Einschalten wenn du stolze Zahlen hast",
       "items": [
-        { "value": "9", "suffix": "+", "label": "Years learning",    "visible": true },
-        { "value": "3", "suffix": "+", "label": "Projects shipped",  "visible": true },
+        { "value": "9", "suffix": "", "label": "Experience",    "visible": true },
         { "value": "1", "suffix": "",  "label": "Big Project released","visible": true }
       ]
     },
@@ -134,7 +133,7 @@
     "headline": "Got a project in mind?",
     "subheadline": "I'm always open to new ideas, collaborations, or just a good conversation about tech.",
     "email": "frederiklippert@gmx.de",
-    "availability_note": "Usually responds within 24 hours",
+    "availability_note": "",
     "socials": [
       { "label": "GitHub",   "url": "https://github.com/frederiklippert",      "icon": "github",   "visible": true },
       { "label": "LinkedIn", "url": "https://linkedin.com/in/", "icon": "linkedin", "visible": false},
