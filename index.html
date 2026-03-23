@@ -570,6 +570,80 @@
       .hero-row { flex-direction: column; align-items: flex-start; }
       footer { flex-direction: column; gap: .5rem; text-align: center; }
     }
+
+    /* ── PROJECT MODAL ── */
+    #proj-modal-overlay {
+      position: fixed; inset: 0; z-index: 3000;
+      background: rgba(5,5,10,0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+      pointer-events: none;
+      transition: background .4s ease, backdrop-filter .4s ease;
+    }
+    #proj-modal-overlay.open {
+      background: rgba(5,5,10,.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      pointer-events: all;
+    }
+    #proj-modal {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+      transition: opacity .4s var(--ease), transform .4s var(--ease);
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) transparent;
+    }
+    #proj-modal::-webkit-scrollbar { width: 3px; }
+    #proj-modal::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+    #proj-modal-overlay.open #proj-modal {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .modal-img {
+      width: 100%;
+      border-radius: 16px 16px 0 0;
+      display: block;
+      max-height: 420px;
+      object-fit: contain;
+      background: var(--bg3);
+    }
+    .modal-img-empty {
+      width: 100%; height: 240px;
+      border-radius: 16px 16px 0 0;
+      background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; opacity: .1;
+    }
+    .modal-body { padding: 2rem 2.25rem 2.5rem; }
+    .modal-year { font-size: .68rem; font-weight: 800; color: var(--accent); letter-spacing: .12em; margin-bottom: .4rem; }
+    .modal-title { font-size: 2rem; font-weight: 900; letter-spacing: -.04em; color: var(--text); margin-bottom: 1rem; line-height: 1.1; }
+    .modal-desc { font-size: .95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .modal-links { display: flex; gap: .65rem; margin-top: 1.5rem; }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border2);
+      color: var(--muted); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s;
+      backdrop-filter: blur(8px);
+      line-height: 1;
+    }
+    .modal-close:hover { background: rgba(232,87,42,.15); border-color: var(--accent); color: var(--accent); }
+
+    /* card & featured click cursor */
+    .proj-card, .proj-featured { cursor: pointer; }
   </style>
 </head>
 <body>
@@ -681,6 +755,22 @@
       <ul class="contact-socials" id="contact-socials"></ul>
     </div>
   </div></section>
+
+
+  <!-- PROJECT MODAL -->
+  <div id="proj-modal-overlay">
+    <div id="proj-modal">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-img-wrap"></div>
+      <div class="modal-body">
+        <div class="modal-year" id="modal-year"></div>
+        <div class="modal-title" id="modal-title"></div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="tag-row" id="modal-tags"></div>
+        <div class="modal-links" id="modal-links"></div>
+      </div>
+    </div>
+  </div>
 
   <footer id="footer"></footer>
 
@@ -897,7 +987,7 @@
 
       if (feat) {
         document.getElementById('proj-featured').innerHTML = `
-          <div class="proj-featured">
+          <div class="proj-featured" data-proj-id="${feat.title}">
             <div class="proj-feat-img">
               ${feat.image ? `<img src="${feat.image}" alt="${feat.title}" loading="lazy" />` : `<span class="proj-feat-ph">${feat.title}</span>`}
               ${feat.wip ? '<span class="wip-badge">Work in Progress</span>' : ''}
@@ -921,6 +1011,7 @@
       rest.forEach(pr => {
         const card = document.createElement('div');
         card.className = 'proj-card';
+        card.dataset.projId = pr.title;
         card.innerHTML = `
           <div class="proj-card-img">
             ${pr.image ? `<img src="${pr.image}" alt="${pr.title}" loading="lazy" />` : `<span class="proj-card-img-ph">${pr.title.charAt(0)}</span>`}
@@ -937,6 +1028,16 @@
             </div>
           </div>`;
         grid.appendChild(card);
+      });
+
+      // attach click → openModal to all project cards and featured
+      document.querySelectorAll('.proj-card, .proj-featured').forEach(el => {
+        el.addEventListener('click', e => {
+          if (e.target.closest('a')) return; // don't open modal when clicking links
+          const title = el.dataset.projId || el.querySelector('.proj-card-title, .proj-title-big')?.textContent;
+          const proj = vis.find(p => p.title === title);
+          if (proj) openModal(proj);
+        });
       });
     }
 
@@ -992,7 +1093,42 @@
         <span>${f.text} <a href="#">${f.name}</a></span>`;
     }
 
+
+    /* ── PROJECT MODAL ── */
+    const overlay = document.getElementById('proj-modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+
+    function openModal(proj) {
+      document.getElementById('modal-year').textContent  = proj.year || '';
+      document.getElementById('modal-title').textContent = proj.title;
+      document.getElementById('modal-desc').textContent  = proj.description;
+      document.getElementById('modal-tags').innerHTML    = (proj.tags||[]).map(t => `<span class="tag">${t}</span>`).join('');
+      document.getElementById('modal-links').innerHTML   =
+        (proj.live   ? `<a href="${proj.live}"   class="proj-link p" target="_blank">Live ↗</a>` : '') +
+        (proj.github ? `<a href="${proj.github}" class="proj-link s" target="_blank">GitHub</a>` : '');
+
+      const imgWrap = document.getElementById('modal-img-wrap');
+      if (proj.image) {
+        imgWrap.innerHTML = `<img class="modal-img" src="${proj.image}" alt="${proj.title}" />`;
+      } else {
+        imgWrap.innerHTML = `<div class="modal-img-empty">${proj.title.charAt(0)}</div>`;
+      }
+
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
     /* ── INIT ── */
+
     async function init() {
       try {
         const data = await fetch('cms.json?v=' + Date.now()).then(r => r.json());

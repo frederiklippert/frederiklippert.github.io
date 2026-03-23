@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotoeffekt – Simulation</title>
+<title>Photoelectric Effect – Simulation</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#080b14;--panel:#0e1120;--panel2:#141828;--border:#1c2238;--accent:#00d9f5;--acc2:#ff6b35;--acc3:#6effa0;--dim:#4a5a88;--text:#d8e2ff;}
@@ -72,49 +72,49 @@ canvas#sim{display:block;width:100%;height:100%;}
 </head>
 <body>
 <header>
-  <h1>Fotoeffekt</h1><span class="sub">Millikan-Gegenfeldmethode</span>
+  <h1>Photoelectric Effect</h1><span class="sub">Millikan Counter-Field Method</span>
   <canvas class="light-dot" id="light-dot" width="16" height="16"></canvas>
   <span id="hdr-wl">—</span>
-  <button class="hbtn on" id="btn-light">● Licht AN</button>
+  <button class="hbtn on" id="btn-light">● Light ON</button>
   <button class="hbtn" id="btn-reset">↺ Reset</button>
 </header>
 <div class="body-row">
   <aside class="left">
     <div>
-      <div class="sect">Frequenz / Lichtfarbe</div>
+      <div class="sect">Frequency / Light Color</div>
       <div class="freq-grid" id="freq-btns">
-        <button class="freq-btn" data-f="4.00"><span>750 nm · Rot</span>4.00×10¹⁴</button>
+        <button class="freq-btn" data-f="4.00"><span>750 nm · Red</span>4.00×10¹⁴</button>
         <button class="freq-btn" data-f="4.82"><span>622 nm · Orange</span>4.82×10¹⁴</button>
-        <button class="freq-btn" data-f="5.26"><span>570 nm · Gelb</span>5.26×10¹⁴</button>
-        <button class="freq-btn" data-f="5.77"><span>520 nm · Grün</span>5.77×10¹⁴</button>
-        <button class="freq-btn" data-f="6.67"><span>450 nm · Blau</span>6.67×10¹⁴</button>
-        <button class="freq-btn" data-f="7.50"><span>400 nm · Violett</span>7.50×10¹⁴</button>
+        <button class="freq-btn" data-f="5.26"><span>570 nm · Yellow</span>5.26×10¹⁴</button>
+        <button class="freq-btn" data-f="5.77"><span>520 nm · Green</span>5.77×10¹⁴</button>
+        <button class="freq-btn" data-f="6.67"><span>450 nm · Blue</span>6.67×10¹⁴</button>
+        <button class="freq-btn" data-f="7.50"><span>400 nm · Violet</span>7.50×10¹⁴</button>
         <button class="freq-btn" data-f="8.20"><span>366 nm · UV-A</span>8.20×10¹⁴</button>
         <button class="freq-btn active" data-f="9.50"><span>316 nm · UV-B</span>9.50×10¹⁴</button>
       </div>
       <div class="sl-wrap">
-        <div class="sl-head"><span class="sl-name">Feineinstellung</span><span class="sl-val" id="val-freq">9.50 ×10¹⁴</span></div>
+        <div class="sl-head"><span class="sl-name">Fine Adjustment</span><span class="sl-val" id="val-freq">9.50 ×10¹⁴</span></div>
         <input type="range" id="sl-freq" min="3.5" max="12.0" step="0.05" value="9.5">
       </div>
     </div>
     <div>
-      <div class="col-hdr open" id="mat-hdr"><span>Kathodenmaterial</span><span class="arr">▶</span></div>
+      <div class="col-hdr open" id="mat-hdr"><span>Cathode Material</span><span class="arr">▶</span></div>
       <div class="col-body open" id="mat-body">
         <div class="mat-grid" id="mat-btns">
-          <button class="mat-btn active" data-w="2.36" data-name="Cäsium (Cs)">Cs<small>2.36 eV</small></button>
-          <button class="mat-btn" data-w="3.78" data-name="Kalium (K)">K<small>3.78 eV</small></button>
-          <button class="mat-btn" data-w="4.31" data-name="Natrium (Na)">Na<small>4.31 eV</small></button>
-          <button class="mat-btn" data-w="4.50" data-name="Kupfer (Cu)">Cu<small>4.50 eV</small></button>
-          <button class="mat-btn" data-w="5.10" data-name="Silber (Ag)">Ag<small>5.10 eV</small></button>
+          <button class="mat-btn active" data-w="2.36" data-name="Cesium (Cs)">Cs<small>2.36 eV</small></button>
+          <button class="mat-btn" data-w="3.78" data-name="Potassium (K)">K<small>3.78 eV</small></button>
+          <button class="mat-btn" data-w="4.31" data-name="Sodium (Na)">Na<small>4.31 eV</small></button>
+          <button class="mat-btn" data-w="4.50" data-name="Copper (Cu)">Cu<small>4.50 eV</small></button>
+          <button class="mat-btn" data-w="5.10" data-name="Silver (Ag)">Ag<small>5.10 eV</small></button>
           <button class="mat-btn" data-w="5.65" data-name="Gold (Au)">Au<small>5.65 eV</small></button>
         </div>
       </div>
-      <div class="mat-cur"><span class="mn" id="mat-cur-name">Cäsium (Cs)</span><span class="mw">W = <span id="mat-cur-w">2.36</span> eV</span></div>
+      <div class="mat-cur"><span class="mn" id="mat-cur-name">Cesium (Cs)</span><span class="mw">W = <span id="mat-cur-w">2.36</span> eV</span></div>
     </div>
     <div>
-      <div class="sect">Beschleunigungsspannung U_B</div>
+      <div class="sect">Accelerating Voltage U_A</div>
       <div class="sl-wrap">
-        <div class="sl-head"><span class="sl-name">U_B</span><span class="sl-val" id="val-ub">1.00 V</span></div>
+        <div class="sl-head"><span class="sl-name">U_A</span><span class="sl-val" id="val-ub">1.00 V</span></div>
         <input type="range" id="sl-ub" min="0" max="5" step="0.05" value="1.0">
       </div>
     </div>
@@ -125,16 +125,16 @@ canvas#sim{display:block;width:100%;height:100%;}
       <div class="vm-box">
         <div class="vm-label">Voltmeter U_M</div>
         <div class="vm-value" id="vm-val">0.000</div>
-        <div class="vm-unit">Volt</div>
+        <div class="vm-unit">Volts</div>
         <div class="vm-sub" id="vm-sub">—</div>
       </div>
       <div class="eq-area">
-        <div class="eq-title">Herleitung &amp; Berechnung von E_kin,max</div>
+        <div class="eq-title">Derivation &amp; Calculation of E_kin,max</div>
         <div class="eq-step" id="eq-step1">—</div>
         <div class="eq-result eq-ok" id="eq-result">—</div>
       </div>
       <div class="status-box">
-        <div class="s-row"><div class="s-dot" id="s-dot"></div><span class="s-txt" id="s-txt">Bereit</span></div>
+        <div class="s-row"><div class="s-dot" id="s-dot"></div><span class="s-txt" id="s-txt">Ready</span></div>
         <div class="s-sub" id="s-sub">—</div>
         <div class="s-sub" id="s-f0">—</div>
       </div>
@@ -143,7 +143,7 @@ canvas#sim{display:block;width:100%;height:100%;}
 </div>
 <script>
 const hJ=6.626e-34,eC=1.602e-19,cms=3e8;
-const state={f:9.5e14,W:2.36,mat:'Cäsium (Cs)',UB:1.0,UM:0,run:true,eq:false};
+const state={f:9.5e14,W:2.36,mat:'Cesium (Cs)',UB:1.0,UM:0,run:true,eq:false};
 function phys(){const hf=hJ*state.f/eC,ek0=hf-state.W,ekG=ek0+state.UB,Ueq=ekG>0?ekG:0;return{hf,ek0,ekG,Ueq,ok:ek0>0};}
 function toRGB(f){const wl=cms/f*1e9;let r=0,g=0,b=0;if(wl<380){r=128;g=0;b=255;}else if(wl<440){r=Math.round((440-wl)/60*255);g=0;b=255;}else if(wl<490){r=0;g=Math.round((wl-440)/50*255);b=255;}else if(wl<510){r=0;g=255;b=Math.round((510-wl)/20*255);}else if(wl<580){r=Math.round((wl-510)/70*255);g=255;b=0;}else if(wl<645){r=255;g=Math.round((645-wl)/65*255);b=0;}else{r=255;g=0;b=0;}return{r,g,b};}
 function css(f,a=1){const{r,g,b}=toRGB(f);return`rgba(${r},${g},${b},${a})`;}
@@ -169,7 +169,7 @@ function draw(ts){
 function drawTube(l,ph){
   const{cX,gX,aX,tY,tH}=l;
   ctx.fillStyle='#111828';ctx.strokeStyle='#1c2238';ctx.lineWidth=1.5;rr(cX-26,tY,aX-cX+54,tH,6);ctx.fill();ctx.stroke();
-  ctx.fillStyle='rgba(74,90,136,.18)';ctx.font='9px JetBrains Mono';ctx.textAlign='center';ctx.fillText('VAKUUM',(cX+aX)/2,tY+12);ctx.textAlign='left';
+  ctx.fillStyle='rgba(74,90,136,.18)';ctx.font='9px JetBrains Mono';ctx.textAlign='center';ctx.fillText('VACUUM',(cX+aX)/2,tY+12);ctx.textAlign='left';
   if(state.run){const{r,g,b}=toRGB(state.f);const bg=ctx.createLinearGradient(0,0,cX-26,0);bg.addColorStop(0,`rgba(${r},${g},${b},.7)`);bg.addColorStop(1,`rgba(${r},${g},${b},0)`);ctx.fillStyle=bg;ctx.fillRect(0,tY+tH/2-4,cX-26,8);ctx.beginPath();ctx.arc(5,tY+tH/2,8,0,Math.PI*2);ctx.fillStyle=`rgb(${r},${g},${b})`;ctx.shadowColor=`rgb(${r},${g},${b})`;ctx.shadowBlur=16;ctx.fill();ctx.shadowBlur=0;}
   if(state.run&&ph.ok){const{r,g,b}=toRGB(state.f);const cg=ctx.createRadialGradient(cX,tY+tH/2,0,cX,tY+tH/2,48);cg.addColorStop(0,`rgba(${r},${g},${b},.16)`);cg.addColorStop(1,`rgba(${r},${g},${b},0)`);ctx.fillStyle=cg;ctx.fillRect(cX-48,tY,96,tH);}
   if(state.UB>0){ctx.globalAlpha=.13;ctx.strokeStyle='#ff6b35';ctx.lineWidth=1;for(let row=1;row<=3;row++){arr(cX+26,tY+tH*row/4,gX-7,tY+tH*row/4,6);}ctx.globalAlpha=1;}
@@ -177,10 +177,10 @@ function drawTube(l,ph){
   ctx.fillStyle='#283580';ctx.fillRect(cX-13,tY+5,13,tH-10);ctx.strokeStyle='#4858b8';ctx.lineWidth=1;ctx.strokeRect(cX-13,tY+5,13,tH-10);ctx.fillStyle='#7888dd';ctx.font='bold 10px JetBrains Mono';ctx.textAlign='center';ctx.fillText('K',cX-6,tY+tH/2+4);ctx.textAlign='left';
   ctx.strokeStyle='#b0bce0';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(gX,tY+3);ctx.lineTo(gX,tY+tH-3);ctx.stroke();ctx.globalAlpha=.45;ctx.lineWidth=.8;for(let i=0;i<7;i++){const gy=tY+5+i*(tH-10)/6;ctx.strokeStyle='#8898c8';ctx.beginPath();ctx.moveTo(gX-3,gy-3);ctx.lineTo(gX+3,gy+3);ctx.stroke();}ctx.globalAlpha=1;ctx.fillStyle='#b0bce0';ctx.font='9px JetBrains Mono';ctx.textAlign='center';ctx.fillText('G',gX,tY-4);ctx.textAlign='left';
   const chg=Math.min(state.UM/Math.max(ph.Ueq,.01),1);ctx.fillStyle=`rgb(${Math.round(20+chg*65)},${Math.round(85-chg*45)},${Math.round(155-chg*95)})`;ctx.fillRect(aX,tY+5,13,tH-10);ctx.strokeStyle='rgba(0,140,210,.7)';ctx.lineWidth=1;ctx.strokeRect(aX,tY+5,13,tH-10);ctx.fillStyle='#70a8e8';ctx.font='bold 10px JetBrains Mono';ctx.textAlign='center';ctx.fillText('A',aX+6,tY+tH/2+4);ctx.textAlign='left';
-  const ly=tY+tH+13;ctx.fillStyle='#4a5a88';ctx.font='9px JetBrains Mono';ctx.textAlign='center';ctx.fillText('Photokathode',cX,ly);ctx.fillText('Gitter',gX,ly);ctx.fillText('Anode',aX+6,ly);ctx.textAlign='left';
-  if(state.UB>0){ctx.fillStyle='rgba(255,107,53,.33)';ctx.font='8px JetBrains Mono';ctx.textAlign='center';ctx.fillText('→ Beschl.-Feld',(cX+gX)/2,tY+tH/2-12);ctx.textAlign='left';}
-  if(state.UM>.05){ctx.fillStyle='rgba(255,68,102,.36)';ctx.font='8px JetBrains Mono';ctx.textAlign='center';ctx.fillText('← Gegenfeld',(gX+aX)/2,tY+tH/2-12);ctx.textAlign='left';}
-  if(!ph.ok&&state.run){ctx.save();ctx.fillStyle='rgba(8,11,20,.82)';rr((cX+aX)/2-125,tY+tH/2-23,250,46,5);ctx.fill();ctx.fillStyle='#ff4466';ctx.font='bold 12px Syne,sans-serif';ctx.textAlign='center';ctx.fillText('h·f < W  —  Kein Fotoeffekt!',(cX+aX)/2,tY+tH/2-4);ctx.fillStyle='#4a5a88';ctx.font='9px JetBrains Mono';const f0=((state.W*eC)/(hJ*1e14)).toFixed(2);ctx.fillText(`Grenzfrequenz f₀ = ${f0} × 10¹⁴ Hz`,(cX+aX)/2,tY+tH/2+14);ctx.restore();ctx.textAlign='left';}
+  const ly=tY+tH+13;ctx.fillStyle='#4a5a88';ctx.font='9px JetBrains Mono';ctx.textAlign='center';ctx.fillText('Photocathode',cX,ly);ctx.fillText('Grid',gX,ly);ctx.fillText('Anode',aX+6,ly);ctx.textAlign='left';
+  if(state.UB>0){ctx.fillStyle='rgba(255,107,53,.33)';ctx.font='8px JetBrains Mono';ctx.textAlign='center';ctx.fillText('→ Accel. Field',(cX+gX)/2,tY+tH/2-12);ctx.textAlign='left';}
+  if(state.UM>.05){ctx.fillStyle='rgba(255,68,102,.36)';ctx.font='8px JetBrains Mono';ctx.textAlign='center';ctx.fillText('← Counter Field',(gX+aX)/2,tY+tH/2-12);ctx.textAlign='left';}
+  if(!ph.ok&&state.run){ctx.save();ctx.fillStyle='rgba(8,11,20,.82)';rr((cX+aX)/2-125,tY+tH/2-23,250,46,5);ctx.fill();ctx.fillStyle='#ff4466';ctx.font='bold 12px Syne,sans-serif';ctx.textAlign='center';ctx.fillText('h·f < W  —  No Photoelectric Effect!',(cX+aX)/2,tY+tH/2-4);ctx.fillStyle='#4a5a88';ctx.font='9px JetBrains Mono';const f0=((state.W*eC)/(hJ*1e14)).toFixed(2);ctx.fillText(`Threshold frequency f₀ = ${f0} × 10¹⁴ Hz`,(cX+aX)/2,tY+tH/2+14);ctx.restore();ctx.textAlign='left';}
 }
 function drawCircuit(l,ph){
   const{cX,gX,aX,tY,tH}=l,base=tY+tH+20,midVM=base+26,midUB=base+62;
@@ -199,7 +199,7 @@ function drawCircuit(l,ph){
   ctx.beginPath();ctx.moveTo(ubCX+14,midUB);ctx.lineTo(gX,midUB);ctx.stroke();
   for(let k=0;k<4;k++){const bx=ubCX-10+k*7,lg=k%2===0;ctx.strokeStyle=lg?'#ff6b35':'#556';ctx.lineWidth=lg?2.2:1.1;ctx.beginPath();ctx.moveTo(bx,midUB-(lg?8:5));ctx.lineTo(bx,midUB+(lg?8:5));ctx.stroke();}
   ctx.lineWidth=1.3;ctx.fillStyle='#ff6b35';ctx.font='bold 8px JetBrains Mono';ctx.textAlign='center';ctx.fillText('−',ubCX-19,midUB-3);ctx.fillText('+',ubCX+19,midUB-3);
-  ctx.fillStyle='rgba(255,107,53,.55)';ctx.font='8px JetBrains Mono';ctx.fillText(`U_B = ${state.UB.toFixed(2)} V`,ubCX,midUB+20);ctx.textAlign='left';
+  ctx.fillStyle='rgba(255,107,53,.55)';ctx.font='8px JetBrains Mono';ctx.fillText(`U_A = ${state.UB.toFixed(2)} V`,ubCX,midUB+20);ctx.textAlign='left';
   gnd(cX,midUB+10,'#2e3c5c');
 }
 function gnd(x,y,c){ctx.strokeStyle=c;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+5);ctx.stroke();for(let i=0;i<3;i++){const hw=6-i*1.8;ctx.beginPath();ctx.moveTo(x-hw,y+5+i*3.5);ctx.lineTo(x+hw,y+5+i*3.5);ctx.stroke();}}
@@ -207,13 +207,13 @@ function arr(x1,y1,x2,y2,hl){const a=Math.atan2(y2-y1,x2-x1);ctx.beginPath();ctx
 function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();}
 function updateUI(ph){
   document.getElementById('vm-val').textContent=state.UM.toFixed(3);
-  document.getElementById('vm-sub').textContent=state.eq?'⇒ Gleichgewicht':'⇒ lädt auf …';
-  document.getElementById('eq-step1').innerHTML=`<span style="color:var(--dim)">e·U<sub>M</sub> = (h·f − W) + e·U<sub>B</sub> = </span><span class="o">(${ph.hf.toFixed(3)} − ${state.W.toFixed(2)})</span><span style="color:var(--dim)"> + </span><span class="c">${state.UB.toFixed(3)}</span><span style="color:var(--dim)"> eV = </span><span class="${ph.ok?'g':'r'}">${ph.ok?ph.Ueq.toFixed(3):'< 0'} eV</span>`;
+  document.getElementById('vm-sub').textContent=state.eq?'⇒ Equilibrium':'⇒ charging …';
+  document.getElementById('eq-step1').innerHTML=`<span style="color:var(--dim)">e·U<sub>M</sub> = (h·f − W) + e·U<sub>A</sub> = </span><span class="o">(${ph.hf.toFixed(3)} − ${state.W.toFixed(2)})</span><span style="color:var(--dim)"> + </span><span class="c">${state.UB.toFixed(3)}</span><span style="color:var(--dim)"> eV = </span><span class="${ph.ok?'g':'r'}">${ph.ok?ph.Ueq.toFixed(3):'< 0'} eV</span>`;
   const ekin=Math.max(state.UM-state.UB,0),res=document.getElementById('eq-result');
-  if(ph.ok){res.className='eq-result eq-ok';res.innerHTML=`<b>E<sub>kin,max</sub></b> = e·(U<sub>M</sub> − U<sub>B</sub>) = e·(${state.UM.toFixed(3)} − ${state.UB.toFixed(3)}) = <span style="color:var(--acc3);font-size:.82rem">${ekin.toFixed(3)} eV</span>`;}else{res.className='eq-result eq-err';res.innerHTML=`h·f = ${ph.hf.toFixed(3)} eV &lt; W = ${state.W.toFixed(2)} eV → Kein Fotoeffekt`;}
+  if(ph.ok){res.className='eq-result eq-ok';res.innerHTML=`<b>E<sub>kin,max</sub></b> = e·(U<sub>M</sub> − U<sub>A</sub>) = e·(${state.UM.toFixed(3)} − ${state.UB.toFixed(3)}) = <span style="color:var(--acc3);font-size:.82rem">${ekin.toFixed(3)} eV</span>`;}else{res.className='eq-result eq-err';res.innerHTML=`h·f = ${ph.hf.toFixed(3)} eV &lt; W = ${state.W.toFixed(2)} eV → No photoelectric effect`;}
   const f0=((state.W*eC)/(hJ*1e14)).toFixed(2);document.getElementById('s-f0').textContent=`f₀ = ${f0} × 10¹⁴ Hz`;
   const dot=document.getElementById('s-dot'),stxt=document.getElementById('s-txt'),ssub=document.getElementById('s-sub');
-  if(!state.run){dot.className='s-dot';stxt.textContent='Licht aus';ssub.textContent='Schalter oben';}else if(!ph.ok){dot.className='s-dot blocked';stxt.textContent='Kein Effekt';ssub.textContent='f < Grenzfrequenz';}else if(state.eq){dot.className='s-dot on';stxt.textContent='Gleichgewicht';ssub.textContent=`U_M = ${state.UM.toFixed(3)} V`;}else{dot.className='s-dot on';stxt.textContent='e⁻ fließen';ssub.textContent=`U_M ↑ ${state.UM.toFixed(3)} V`;}
+  if(!state.run){dot.className='s-dot';stxt.textContent='Light off';ssub.textContent='Toggle switch above';}else if(!ph.ok){dot.className='s-dot blocked';stxt.textContent='No effect';ssub.textContent='f < threshold freq.';}else if(state.eq){dot.className='s-dot on';stxt.textContent='Equilibrium';ssub.textContent=`U_M = ${state.UM.toFixed(3)} V`;}else{dot.className='s-dot on';stxt.textContent='e⁻ flowing';ssub.textContent=`U_M ↑ ${state.UM.toFixed(3)} V`;}
 }
 function updatePreview(){const lc=document.getElementById('light-dot').getContext('2d');const{r,g,b}=toRGB(state.f);lc.clearRect(0,0,16,16);const gd=lc.createRadialGradient(8,8,0,8,8,8);gd.addColorStop(0,`rgb(${r},${g},${b})`);gd.addColorStop(1,`rgba(${r},${g},${b},0)`);lc.fillStyle=gd;lc.beginPath();lc.arc(8,8,8,0,Math.PI*2);lc.fill();document.getElementById('hdr-wl').textContent=`λ = ${Math.round(cms/state.f*1e9)} nm`;}
 function reset(){state.UM=0;state.eq=false;photons.length=0;electrons.length=0;sparks.length=0;}
@@ -222,7 +222,7 @@ document.getElementById('freq-btns').addEventListener('click',ev=>{const btn=ev.
 document.getElementById('sl-ub').addEventListener('input',function(){state.UB=parseFloat(this.value);document.getElementById('val-ub').textContent=state.UB.toFixed(2)+' V';reset();});
 document.getElementById('mat-hdr').addEventListener('click',()=>{document.getElementById('mat-hdr').classList.toggle('open');document.getElementById('mat-body').classList.toggle('open');});
 document.getElementById('mat-btns').addEventListener('click',ev=>{const btn=ev.target.closest('.mat-btn');if(!btn)return;document.querySelectorAll('.mat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.W=parseFloat(btn.dataset.w);state.mat=btn.dataset.name;document.getElementById('mat-cur-name').textContent=state.mat;document.getElementById('mat-cur-w').textContent=state.W.toFixed(2);reset();});
-function updT(){const b=document.getElementById('btn-light');if(state.run){b.textContent='● Licht AN';b.classList.add('on');}else{b.textContent='○ Licht AUS';b.classList.remove('on');}}
+function updT(){const b=document.getElementById('btn-light');if(state.run){b.textContent='● Light ON';b.classList.add('on');}else{b.textContent='○ Light OFF';b.classList.remove('on');}}
 document.getElementById('btn-light').addEventListener('click',()=>{state.run=!state.run;if(!state.run){electrons.length=0;photons.length=0;sparks.length=0;}updT();});
 document.getElementById('btn-reset').addEventListener('click',reset);
 updatePreview();requestAnimationFrame(draw);
