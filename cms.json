@@ -104,7 +104,7 @@
         "title": "EmojiCodeAI",
         "year": "2025",
         "description": "An experimental AI tool that translates text into a sequence of emojis—not as a direct 1:1 translation, but as an interpretive one. The algorithm analyzes mood, context, and key concepts, and uses them to generate an emoji sequence that, in the best-case scenario, summarizes the text better than words ever could. Small project, big question: What is lost when language consists solely of symbols?",
-        "image": "projects/EmojiCodeAI/EmojicodeAI.png",
+        "image": "projects/EmojiCodeAI/EmojiCodeAI.png",
         "tags": ["AI", "NLP", "Python", "Emoji", "Experiment"],
         "github": "",
         "live": "",
