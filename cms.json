@@ -76,7 +76,7 @@
     "items": [
       {
         "visible": true,
-        "featured": false,
+        "featured": true,
         "title": "PoS System for my School Kiosk",
         "year": "2025/26",
         "description": "A custom-built POS system for a school kiosk – developed using Flutter for an Android tablet, a web dashboard, and an additional kitchen display. Firestore ensures real-time synchronization across all devices, even offline. Features such as modifiers/toppings, order numbers, inventory management, and PayPal QR codes are all included. Developed entirely in-house, from concept to finished APK.",
