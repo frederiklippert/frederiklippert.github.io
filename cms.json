@@ -80,7 +80,7 @@
         "title": "PoS System for my School Kiosk",
         "year": "2025/26",
         "description": "A custom-built POS system for a school kiosk – developed using Flutter for an Android tablet, a web dashboard, and an additional kitchen display. Firestore ensures real-time synchronization across all devices, even offline. Features such as modifiers/toppings, order numbers, inventory management, and PayPal QR codes are all included. Developed entirely in-house, from concept to finished APK.",
-        "image": "/projects/school_PoS_system",
+        "image": "projects/school_PoS_system/PoS.png",
         "tags": ["Flutter", "Dart", "Firestore", "Android"],
         "github": "",
         "live": "",
@@ -92,23 +92,11 @@
         "title": "A simulation of the physical photoelectric effect",
         "year": "2026",
         "description": "For my physics class, I created a simulation of the photoelectric effect using HTML, CSS, and JavaScript to help illustrate the concept.",
-        "image": "/projects/school_PoS_system",
+        "image": "projects/physics_simulation/fotoeffect.png",
         "tags": ["Physics", "HTML"],
         "github": "",
         "live": "/projects/physics_simulation/fotoeffect.html",
         "wip": false
-      },
-      {
-        "visible": true,
-        "featured": false,
-        "title": "Website for the dental practice “Zahnärzte Dammann”",
-        "year": "2024",
-        "description": "Freelance project: Conceptualization and development of the official website for a dental practice. I developed the design, structure, and content entirely on my own, coordinated directly with the client, and built the site using Wix.",
-        "image": "/projects/Dr. Dammann/Dr. Dammann.png",
-        "tags": ["Freelance", "Wix", "Webdesign", "Client Work"],
-        "github": "",
-        "live": "https://www.drdammann.de",
-        "wip": true
       },
       {
         "visible": true,
@@ -120,6 +108,18 @@
         "tags": ["AI", "NLP", "Python", "Emoji", "Experiment"],
         "github": "",
         "live": "",
+        "wip": true
+      },
+      {
+        "visible": true,
+        "featured": false,
+        "title": "Website for the dental practice “Zahnärzte Dammann”",
+        "year": "2024",
+        "description": "Freelance project: Conceptualization and development of the official website for a dental practice. I developed the design, structure, and content entirely on my own, coordinated directly with the client, and built the site using Wix.",
+        "image": "/projects/Dr_Dammann/Dr_Dammann.png",
+        "tags": ["Freelance", "Wix", "Webdesign", "Client Work"],
+        "github": "",
+        "live": "https://www.drdammann.de",
         "wip": true
       }
     ]
